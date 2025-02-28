@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using API.Extensions;
 
 
 
@@ -27,31 +28,10 @@ builder.WebHost.ConfigureKestrel(options =>
     });
 });
 
+var configuration = builder.Configuration;
 
-builder.Services.AddScoped<ITokenService, TokenService>();
-
-var tokenKey = builder.Configuration["TokenKey"];
-if (string.IsNullOrEmpty(tokenKey))
-{
-    throw new ArgumentException("TokenKey is missing from the configuration.");
-}
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>{
-    options.TokenValidationParameters = new TokenValidationParameters{
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey)),
-        ValidateIssuer = false,
-        ValidateAudience = false,
-    };
-});
-
-
-// Configure services
-builder.Services.AddDbContext<DataContext>(options =>
-{
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
+builder.Services.AddApplicationServices(configuration);
+builder.Services.AddIdentityServices(configuration);
 // Add Controllers
 builder.Services.AddControllers();
 
