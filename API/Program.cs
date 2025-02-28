@@ -3,6 +3,15 @@ using System.Security.Cryptography.X509Certificates;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using API.Interfaces;
+using API.Services;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +25,24 @@ builder.WebHost.ConfigureKestrel(options =>
     {
         listenOptions.ServerCertificate = certificate;
     });
+});
+
+
+builder.Services.AddScoped<ITokenService, TokenService>();
+
+var tokenKey = builder.Configuration["TokenKey"];
+if (string.IsNullOrEmpty(tokenKey))
+{
+    throw new ArgumentException("TokenKey is missing from the configuration.");
+}
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>{
+    options.TokenValidationParameters = new TokenValidationParameters{
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey)),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+    };
 });
 
 
@@ -49,6 +76,7 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseCors("MyAllowSpecificOrigins");  // CORS must be applied before UseRouting()
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

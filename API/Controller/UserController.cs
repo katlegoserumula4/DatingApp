@@ -1,5 +1,7 @@
+using API.Controller;
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")] // Matches 'api/users' in URL
-
-    public class UsersController : ControllerBase
+    
+    public class UsersController : BaseApiController
     {
         private readonly DataContext context;
 
@@ -27,7 +27,8 @@ namespace API.Controllers
             return await context.Users.ToListAsync();
         }
 
-        // Retrieve a specific user by ID
+        [Authorize]
+        // [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUser(int id)
         {

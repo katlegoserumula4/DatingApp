@@ -157,3 +157,11 @@ C:\Users\KatlegoSerumula\DatingApp\API\obj\Debug\net9.0\API.sourcelink.json
 C:\Users\KatlegoSerumula\DatingApp\API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\KatlegoSerumula\DatingApp\API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\KatlegoSerumula\DatingApp\API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\KatlegoSerumula\DatingApp\API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\KatlegoSerumula\DatingApp\API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\KatlegoSerumula\DatingApp\API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\KatlegoSerumula\DatingApp\API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\KatlegoSerumula\DatingApp\API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\KatlegoSerumula\DatingApp\api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\KatlegoSerumula\DatingApp\api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\KatlegoSerumula\DatingApp\api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
