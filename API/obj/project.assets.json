@@ -3891,11 +3891,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KatlegoSerumula\\DatingApp\\api\\API.csproj",
+      "projectUniqueName": "C:\\Users\\KatlegoSerumula\\DatingApp\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\KatlegoSerumula\\DatingApp\\api\\API.csproj",
+      "projectPath": "C:\\Users\\KatlegoSerumula\\DatingApp\\API\\API.csproj",
       "packagesPath": "C:\\Users\\KatlegoSerumula\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KatlegoSerumula\\DatingApp\\api\\obj\\",
+      "outputPath": "C:\\Users\\KatlegoSerumula\\DatingApp\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3986,7 +3986,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
