@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   }
 
   getUsers(){
-    this.http.get('http://localhost:5000/api/users').subscribe(response =>{   //send a GET request to specified URL, API endpoint 
+    this.http.get('https://localhost:5001/api/users').subscribe(response =>{   //send a GET request to specified URL, API endpoint 
       this.users = response; //Data is stored in the variable users
     }, error => {
       console.error('Error fetching users:', error);
