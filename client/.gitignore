@@ -43,7 +43,7 @@ Thumbs.db
 
 /client/node_modules/
 package.json
-/api/bin
+
 /client/package-lock.json
-bin/
-obj/
+API/bin/
+API/obj/

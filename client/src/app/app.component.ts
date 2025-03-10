@@ -13,11 +13,11 @@ export class AppComponent implements OnInit {
   title = 'client';
   users: any;
   
-  constructor(private http: HttpClient, private accountService: AccountService){}
+  constructor( private accountService: AccountService){}
 
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
     this.setCurrentUser();
   }
 
@@ -29,13 +29,13 @@ export class AppComponent implements OnInit {
 
 
 
-  getUsers(){
-    this.http.get('https://localhost:5001/api/users').subscribe(response =>{   //send a GET request to specified URL, API endpoint 
-      this.users = response; //Data is stored in the variable users
-    }, error => {
-      console.error('Error fetching users:', error);
-      alert('Failed to load users. Please try again later.');
-    })
-  }
+  // getUsers(){
+  //   this.http.get('https://localhost:5001/api/users').subscribe(response =>{   //send a GET request to specified URL, API endpoint 
+  //     this.users = response; //Data is stored in the variable users
+  //   }, error => {
+  //     console.error('Error fetching users:', error);
+  //     alert('Failed to load users. Please try again later.');
+  //   })
+  // }
 
 }
